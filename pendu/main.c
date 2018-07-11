@@ -19,10 +19,9 @@ int main(int argc, const char * argv[]) {
     char *mot_secret = "marron", caractere_proposer= 0;
     int *mot_trouver = NULL, i =0;
     unsigned long taille = 0;
-    
+    // intialisation du mot a trouver
     taille = strlen (mot_secret);
     mot_trouver= malloc(sizeof(int)*taille);
-    
     for (i=0; i<=taille;i++){
         mot_trouver[i]= 0;
     }

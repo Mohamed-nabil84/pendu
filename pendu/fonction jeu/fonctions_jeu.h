@@ -15,5 +15,6 @@
 #include <ctype.h>
 
 // fonction qui recherche le caractere dans le mot secret
+int recherche_caractere ( char *mottrouve, char caractere_proposer, int *mot_trouver, unsigned long taille);
 
 #endif /* fonctions_jeu_h */
