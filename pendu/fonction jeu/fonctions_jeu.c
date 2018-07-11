@@ -7,3 +7,6 @@
 //
 
 #include "fonctions_jeu.h"
+
+// fonction qui rechercher le crarctere dans le mot secret
+

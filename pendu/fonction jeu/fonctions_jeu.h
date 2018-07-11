@@ -10,5 +10,10 @@
 #define fonctions_jeu_h
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.H>
+#include <ctype.h>
+
+// fonction qui recherche le caractere dans le mot secret
 
 #endif /* fonctions_jeu_h */
