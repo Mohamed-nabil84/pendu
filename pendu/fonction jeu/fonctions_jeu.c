@@ -8,6 +8,26 @@
 
 #include "fonctions_jeu.h"
 
+// fonction qui afficher les caractere trouver du mot secret
+void afficher (int *motrouver, char *motsecret, unsigned long taille){
+    int i =0;
+    for (i = 0; i < taille; i++){
+        if (motrouver[i] == 1){
+            printf ("%c", motsecret[i]);
+        }else
+            printf ("*");
+    }
+}
+
+// fonction de saisi du caractere proposer
+char  saisi_caractere(){
+    char caractere = 0;
+    caractere= getchar();
+    caractere = toupper(caractere);
+    while (getchar() != '\n');
+    return caractere;
+}
+
 // fonction qui rechercher le crarctere dans le mot secret
 
 int recherche_caractere ( char *mottrouve, char caractere_proposer, int *mot_trouver, unsigned long taille){
@@ -16,6 +36,19 @@ int recherche_caractere ( char *mottrouve, char caractere_proposer, int *mot_tro
         if(mottrouve[i] == caractere_proposer){
             mot_trouver[i]=1;
             resultat=1;
+        }
+    }
+    return resultat;
+}
+
+// fonction qui test si le jeueur a ganger ou pas
+
+int gagner_partie (int *motrouver, unsigned long taille){
+    int i = 0, resultat =1;
+    
+    for (i=0; i< taille; i++){
+        if(! motrouver[i]){
+            resultat = 0;
         }
     }
     return resultat;
