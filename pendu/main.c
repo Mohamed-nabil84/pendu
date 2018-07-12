@@ -16,9 +16,19 @@
 
 int main(int argc, const char * argv[]) {
     
+    FILE* fichier = NULL;
     char *mot_secret = "MARRON", caractere_proposer= 0;
     int *mot_trouver = NULL, i =0, coups_restant =10;
     unsigned long taille = 0;
+    
+    // Ouvrir le fichier DICO
+    fichier = fopen("/Users/ismailmohamednabil/Documents/Codages/exercices/DICO.txt", "r");
+    
+    // verifier que le fichier c'est bien ouvert
+    if(!fichier){
+        printf("erreur de lecture de fichier");
+        exit(1);
+    }
     
     // intialisation du mot a trouver
     taille = strlen (mot_secret);
@@ -31,11 +41,12 @@ int main(int argc, const char * argv[]) {
     while (coups_restant > 0 && ! gagner_partie(mot_trouver, taille)){
         
         // afficher les caractere retrouver er afficher cimobien de essaie reste au joueur
+        printf("le mot secret: ");
         afficher(mot_trouver, mot_secret, taille);
-        printf ("il vous reste %d coups\n", coups_restant);
+        printf ("\nil vous reste %d coups\n", coups_restant);
         
         // affecter un caractere proposer par le joueur
-        printf ("proposer un caractere \n");
+        printf ("\nproposer un caractere: \n");
         caractere_proposer = saisi_caractere();
         
         // 
@@ -52,5 +63,6 @@ int main(int argc, const char * argv[]) {
         }
     }
     free(mot_trouver);
+    fclose(fichier);
     return 0;
 }
