@@ -16,7 +16,7 @@
 
 int main(int argc, const char * argv[]) {
     
-    char *mot_secret = "marron", caractere_proposer= 0;
+    char *mot_secret = "MARRON", caractere_proposer= 0;
     int *mot_trouver = NULL, i =0, coups_restant =10;
     unsigned long taille = 0;
     
@@ -29,16 +29,27 @@ int main(int argc, const char * argv[]) {
     printf ("bienvenue dans le jeu du pendu\n\n");
     
     while (coups_restant > 0 && ! gagner_partie(mot_trouver, taille)){
-        // afficher les caractere retrouver
+        
+        // afficher les caractere retrouver er afficher cimobien de essaie reste au joueur
         afficher(mot_trouver, mot_secret, taille);
+        printf ("il vous reste %d coups\n", coups_restant);
+        
         // affecter un caractere proposer par le joueur
         printf ("proposer un caractere \n");
         caractere_proposer = saisi_caractere();
+        
+        // 
         if (! recherche_caractere(mot_secret, caractere_proposer, mot_trouver, taille)){
             coups_restant--;
         }
         
-        
+        if (gagner_partie(mot_trouver, taille)){
+            
+            printf("vous avez gange, vous avez trouve le mot secret\nle mot secret est : %s\n", mot_secret);
+        }
+        if (! gagner_partie(mot_trouver, taille) && coups_restant == 0){
+            printf ("vous avez perdu, le mot secret etait: %s\n", mot_secret);
+        }
     }
     free(mot_trouver);
     return 0;

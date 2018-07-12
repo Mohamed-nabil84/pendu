@@ -17,6 +17,7 @@ void afficher (int *motrouver, char *motsecret, unsigned long taille){
         }else
             printf ("*");
     }
+    printf ("\n");
 }
 
 // fonction de saisi du caractere proposer
