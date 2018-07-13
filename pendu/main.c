@@ -17,7 +17,7 @@
 int main(int argc, const char * argv[]) {
     
     FILE* fichier = NULL;
-    char *mot_secret = "MARRON", caractere_proposer= 0;
+    char mot_secret[100] = {}, caractere_proposer= 0;
     int *mot_trouver = NULL, i =0, coups_restant =10;
     unsigned long taille = 0;
     
@@ -26,10 +26,10 @@ int main(int argc, const char * argv[]) {
     
     // verifier que le fichier c'est bien ouvert
     if(!fichier){
-        printf("erreur de lecture de fichier");
+        printf("erreur de lecture de fichier\n");
         exit(1);
     }
-    
+    f1(fichier, mot_secret);
     // intialisation du mot a trouver
     taille = strlen (mot_secret);
     mot_trouver= malloc(sizeof(int)*taille);
