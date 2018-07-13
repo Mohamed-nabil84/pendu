@@ -22,7 +22,6 @@ void f1 (FILE *dictionnaire, char *tableau){
     p = tirage_sort(compteur);
     rewind(dictionnaire);
     fseek(dictionnaire, pcurseur(dictionnaire, p), SEEK_SET);
-    
 }
 // Fonction tirage au sort du mot
 

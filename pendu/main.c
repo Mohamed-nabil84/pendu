@@ -30,6 +30,8 @@ int main(int argc, const char * argv[]) {
         exit(1);
     }
     f1(fichier, mot_secret);
+    fgets(mot_secret, 100, fichier);
+    printf ("%s\n", mot_secret);
     // intialisation du mot a trouver
     taille = strlen (mot_secret);
     mot_trouver= malloc(sizeof(int)*taille);
