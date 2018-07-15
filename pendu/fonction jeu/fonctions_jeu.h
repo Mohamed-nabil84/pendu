@@ -25,5 +25,7 @@ char  saisi_caractere();
 
 // fonction qui verifie si le joueur a gagner
 int gagner_partie (int *motrouver, unsigned long taille);
+// Fonction qui change le caractere '\n' par '\0'
+void changer_caractere ( char *tac);
 
 #endif /* fonctions_jeu_h */

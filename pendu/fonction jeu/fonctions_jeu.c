@@ -54,3 +54,16 @@ int gagner_partie (int *motrouver, unsigned long taille){
     }
     return resultat;
 }
+
+// fonction qui remplace \n par un \0
+
+void changer_caractere (char *tac){
+    int i = 0;
+    unsigned long d = 0;
+    d = strlen(tac);
+    for (i = 0; i <= d; i++){
+        if (tac[i] == '\n'){
+            tac[i] = '\0';
+        }
+    }
+}
