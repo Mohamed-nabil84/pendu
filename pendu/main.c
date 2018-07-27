@@ -68,7 +68,7 @@ int main(int argc, const char * argv[]) {
         }
         free(mot_trouver);
         fclose(fichier);
-        printf ("voulez-vous reprendre la partie\n\n  0-NON\n  1-OUI\n");
+        printf ("voulez-vous reprendre la partie:\n\n  0-NON\n  1-OUI\n");
         scanf("%lu", &djeu);
     }
     return EXIT_SUCCESS;
