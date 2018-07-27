@@ -27,7 +27,7 @@ int main(int argc, const char * argv[]) {
         // verifier que le fichier c'est bien ouvert
         if(!fichier){
             printf("erreur de lecture de fichier\n");
-            exit(1);
+            exit(EXIT_FAILURE);
         }
         f1(fichier, mot_secret);
         fgets(mot_secret, 100, fichier);
@@ -71,5 +71,5 @@ int main(int argc, const char * argv[]) {
         printf ("voulez-vous reprendre la partie\n\n  0-NON\n  1-OUI\n");
         scanf("%lu", &djeu);
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
